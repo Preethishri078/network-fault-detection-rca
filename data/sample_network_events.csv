@@ -1,0 +1,7 @@
+timestamp,source_device,event_type,details
+2026-10-10T16:00:00,Cisco-Nexus9K-Core1,NODE_UNREACHABLE,{"cause": "Power PSU Failure", "facility": "datacenter_east"}
+2026-10-10T16:00:01,Arista-7050X-DistB,NODE_UNREACHABLE,{"cause": "Uplink Down to Core1"}
+2026-10-10T16:00:02,Juniper-EX2300-Acc3,NODE_UNREACHABLE,{"cause": "DistB Path Lost"}
+2026-10-10T16:00:03,Dell-PowerEdge-Srv05,NODE_UNREACHABLE,{"cause": "Access Loss"}
+2026-10-10T16:00:04,Dell-PowerEdge-Srv06,NODE_UNREACHABLE,{"cause": "Access Loss"}
+2026-10-10T16:00:05,Fortinet-FW-CloudGW,NODE_UNREACHABLE,{"cause": "Gateway Loss"}

@@ -1,0 +1,47 @@
+event_rules:
+  NODE_UNREACHABLE:
+    base_severity: CRITICAL
+    description: Node unreachable via ping/SNMP poll
+  LINK_DOWN:
+    base_severity: MAJOR
+    uplink_escalation: CRITICAL
+    description: Physical link down on interface
+  PACKET_LOSS:
+    base_severity: MINOR
+    high_threshold_pct: 10.0
+    high_threshold_severity: MAJOR
+    description: Excessive packet loss detected
+  HIGH_LATENCY:
+    base_severity: MINOR
+    sustained_threshold_ms: 200.0
+    sustained_threshold_severity: MAJOR
+    description: High round-trip latency detected
+  LINK_UP:
+    base_severity: INFO
+    clears_alarm: LINK_DOWN
+    description: Interface link restored
+  NODE_REACHABLE:
+    base_severity: INFO
+    clears_alarm: NODE_UNREACHABLE
+    description: Node connectivity restored
+
+device_type_escalation:
+  CORE:
+    MAJOR: CRITICAL
+    MINOR: MAJOR
+    INFO: INFO
+  DIST:
+    MINOR: MAJOR
+    INFO: INFO
+  ACCESS: {}
+  SERVER: {}
+
+dedup_settings:
+  sliding_window_seconds: 30
+  flap_threshold_count: 5
+  flap_window_seconds: 30
+
+correlation_settings:
+  window_seconds: 60
+  confidence_root_direct_boost: 20.0
+  inferred_root_base_confidence: 65.0
